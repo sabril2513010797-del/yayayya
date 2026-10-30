@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    transition: all 0.5s ease;
+}
+
+/* === Halaman Login === */
+.halaman-login {
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.kotak-login {
+    background: #fff;
+    padding: 2.8rem 2.2rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    width: 100%;
+    max-width: 420px;
+    animation: muncul 0.6s ease;
+}
+
+@keyframes muncul {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.judul-login {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 1.7rem;
+}
+
+.grup-input {
+    margin-bottom: 1.4rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: #555;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e1e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4b6cb7;
+    box-shadow: 0 0 0 4px rgba(75, 108, 183, 0.2);
+}
+
+.tombol-masuk {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.tombol-masuk:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(75, 108, 183, 0.35);
+}
+
+.pesan-salah {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: #ffebee;
+    color: #c62828;
+    border-radius: 8px;
+    display: none;
+    text-align: center;
+}
+
+/* === Halaman Ucapan === */
+.halaman-ucapan {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffecd2);
+    background-size: 400% 400%;
+    animation: latarBergerak 8s ease infinite;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+@keyframes latarBergerak {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.kotak-ucapan {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    padding: 3rem 2.5rem;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    text-align: center;
+    max-width: 500px;
+    animation: naikMuncul 1s ease;
+}
+
+@keyframes naikMuncul {
+    from { opacity: 0; transform: translateY(30px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.hati-animasi {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    animation: detak 1.2s ease infinite;
+}
+
+@keyframes detak {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.teks-rindu {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #b71c1c;
+    margin-bottom: 1rem;
+}
+
+.teks-penuh {
+    font-size: 1.3rem;
+    color: #4a148c;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.tombol-keluar {
+    padding: 0.8rem 2rem;
+    background: rgba(255,255,255,0.4);
+    color: #4a148c;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tombol-keluar:hover {
+    background: rgba(255,255,255,0.6);
+}
+
+/* Responsif untuk HP */
+@media (max-width: 480px) {
+    .kotak-login, .kotak-ucapan {
+        padding: 2rem 1.5rem;
+    }
+    .teks-rindu { font-size: 1.7rem; }
+    .teks-penuh { font-size: 1.1rem; }
+}

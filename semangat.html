@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayang Aku Kangen 💌</title>
+    <link rel="stylesheet" href="semangat.css">
+</head>
+<body>
+
+    <!-- Halaman Login -->
+    <div class="halaman-login" id="halamanMasuk">
+        <div class="kotak-login">
+            <h2 class="judul-login">🔐 Masuk Dulu Ya</h2>
+
+            <form id="formMasuk">
+                <div class="grup-input">
+                    <label for="nama">Siapa Nama Kamu?</label>
+                    <input type="text" id="nama" placeholder="Tulis nama kamu" required>
+                </div>
+
+                <div class="grup-input">
+                    <label for="kunci">Kata Sandi Rahasia</label>
+                    <input type="password" id="kunci" placeholder="Hanya kita yang tahu" required>
+                </div>
+
+                <button type="submit" class="tombol-masuk">Buka Pesan 💌</button>
+            </form>
+
+            <div class="pesan-salah" id="pesanSalah">
+                Hmm... coba periksa lagi ya 😊
+            </div>
+        </div>
+    </div>
+
+    <!-- Halaman Ucapan -->
+    <div class="halaman-ucapan" id="halamanUcapan">
+        <div class="kotak-ucapan">
+            <div class="hati-animasi">❤️</div>
+            
+            <h1 class="teks-rindu">Sayang, Aku Kangen Kamu 💗</h1>
+            
+            <p class="teks-penuh">
+                Sejauh apa pun kita terpisah,<br>
+                sesibuk apa pun harinya,<br>
+                kamu tetap orang yang paling aku rindukan.<br>
+                Setiap detik rasanya ingin selalu ada di sampingmu.<br>
+                Semoga kita segera bertemu ya.<br>
+                <strong>Aku sayang kamu, selamanya hanya kamu. 💕</strong>
+            </p>
+
+            <button class="tombol-keluar" id="tombolKeluar">Kembali</button>
+        </div>
+    </div>
+
+<script>
+// Kunci rahasia — bisa diubah sesuka hati
+const namaBenar = 'sayang';
+const sandiBenar = 'kamu';
+
+const form = document.getElementById('formMasuk');
+const pesanSalah = document.getElementById('pesanSalah');
+const halamanMasuk = document.getElementById('halamanMasuk');
+const halamanUcapan = document.getElementById('halamanUcapan');
+const tombolKeluar = document.getElementById('tombolKeluar');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const nama = document.getElementById('nama').value.trim().toLowerCase();
+    const kunci = document.getElementById('kunci').value.trim().toLowerCase();
+
+    if (nama === namaBenar && kunci === sandiBenar) {
+        halamanMasuk.style.display = 'none';
+        halamanUcapan.style.display = 'flex';
+    } else {
+        pesanSalah.style.display = 'block';
+        setTimeout(() => pesanSalah.style.display = 'none', 3000);
+    }
+});
+
+tombolKeluar.addEventListener('click', function() {
+    halamanUcapan.style.display = 'none';
+    halamanMasuk.style.display = 'flex';
+    form.reset();
+});
+</script>
+
+</body>
+</html>
